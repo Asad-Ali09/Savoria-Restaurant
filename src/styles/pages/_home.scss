@@ -1,0 +1,92 @@
+// HERO SECTION
+.hero {
+  padding-inline: $body-padding;
+  @include grid-2-cols;
+  background-color: $header-color;
+  padding-top: 5rem;
+  padding-bottom: 20rem;
+  overflow: hidden;
+
+  // HERO CONTENT BOX
+  &__content-box {
+    @include d-flex-column;
+    align-items: start;
+    gap: 3rem;
+  }
+
+  // HERO TAG
+  &__tag {
+    background-color: $color-secondary;
+    color: $color-white;
+    padding: 0.7rem;
+    clip-path: polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%);
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    padding-inline: 2rem;
+    padding-right: 4rem;
+    //   letter-spacing: 0.1rem;
+    font-weight: 500;
+  }
+
+  // Main ul List
+  &__list {
+    @include d-flex-column;
+    align-items: flex-start;
+
+    &__item {
+      list-style: none;
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+      @include d-flex-row;
+      justify-content: flex-start;
+
+      > span {
+        border-radius: 50%;
+        background-color: $color-secondary;
+        width: 2rem;
+        height: 2rem;
+        @include d-flex-column;
+
+        > svg {
+          font-size: 1.4rem;
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  // HERO IMAGE SECTION
+  &__img {
+    // MAIN IMAGE BOX
+    &-box {
+      // MAIN HERO IMAGE
+      position: relative;
+    }
+
+    // Main image
+    &--main {
+      position: relative;
+      z-index: 1;
+    }
+
+    // Floating Shape
+    &__shape {
+      position: absolute;
+
+      // Tomato
+      &--02 {
+        top: 5%;
+        right: -20%;
+        transition: transform 1s ease-out;
+      }
+
+      // Lattice
+      &--03 {
+        bottom: 2%;
+        left: 7%;
+        transition: transform 1s ease-out;
+      }
+    }
+  }
+}

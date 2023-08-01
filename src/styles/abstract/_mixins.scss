@@ -2,9 +2,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
 @mixin d-flex-column {
   @include d-flex-row;
   flex-direction: column;
+}
+
+@mixin grid-2-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
