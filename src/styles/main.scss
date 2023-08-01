@@ -1,8 +1,13 @@
+// ABSTRACT
 @import "./abstract/functions";
 @import "./abstract/mixins";
 @import "./abstract/variables";
 
+// BASE
 @import "./base/base";
 @import "./base/animations";
 @import "./base/typography";
 @import "./base/utilities";
+
+// COMPONENTS
+@import "./components/header";
