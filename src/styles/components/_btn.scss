@@ -6,34 +6,52 @@
   cursor: pointer;
   font-size: 1.6rem;
   transition: all 0.3s;
+  background-size: 220%;
+  background-position: 100%;
+  text-transform: uppercase;
+  font-weight: 500;
+  @include d-flex-row;
+
+  // HOVERED BUTTON
+  &:hover {
+    background-position: 0%;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+  }
+
+  //  Active State
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
 
   // Primary Button
   &__primary {
     padding: 1.7rem 2.5rem;
     color: $color-white;
     background-color: $color-primary;
-    text-transform: uppercase;
     font-weight: 700;
     overflow: hidden;
-    @include d-flex-row;
+
     background-image: linear-gradient(
       60deg,
       $color-white 50%,
       $color-primary 50%
     );
-    background-size: 220%;
-    background-position: 100%;
 
-    // HOVERED BUTTON
     &:hover {
-      background-position: 0%;
       color: $color-black;
-      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
     }
+  }
 
-    //  Active State
-    &:active {
-      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
-    }
+  // Ghost variant
+  &__ghost {
+    font-size: 1.4rem;
+    padding: 0.7rem 1.2rem;
+    border: 2px solid $color-primary;
+    font-weight: 600;
+    background-image: linear-gradient(
+      60deg,
+      $color-primary 50%,
+      transparent 50%
+    );
   }
 }

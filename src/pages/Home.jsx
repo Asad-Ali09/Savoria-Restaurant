@@ -5,6 +5,26 @@ import heroShape02 from "../assets/hero_shape_02.png";
 import heroShape03 from "../assets/hero_shape_03.png";
 import { AiOutlineCheck } from "react-icons/ai";
 import { useRef } from "react";
+import FoodCard from "../components/FoodCard";
+// Food Card Images
+import foodCardImg01 from "../assets/food-card-01.png";
+import foodCardImg02 from "../assets/food-card-02.png";
+import foodCardImg03 from "../assets/food-card-03.png";
+
+const foodCards = [
+  {
+    title: "Maxican Pizza",
+    image: foodCardImg01,
+  },
+  {
+    title: "Soft Drinks",
+    image: foodCardImg02,
+  },
+  {
+    title: "French Fry",
+    image: foodCardImg03,
+  },
+];
 
 const Home = () => {
   //Refernce to images in hero section
@@ -76,6 +96,13 @@ const Home = () => {
       </div>
 
       {/* End of Hero Section */}
+
+      {/* Food Cards Section */}
+      <section className="section-food-cards">
+        {foodCards.map((el) => (
+          <FoodCard title={el.title} image={el.image} />
+        ))}
+      </section>
     </>
   );
 };

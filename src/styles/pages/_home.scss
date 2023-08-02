@@ -90,3 +90,14 @@
     }
   }
 }
+
+// Food Cards Section
+
+.section-food-cards {
+  padding-inline: $body-padding;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-block: 10rem;
+  margin-top: -5rem;
+}
