@@ -10,7 +10,13 @@
   background-position: 100%;
   text-transform: uppercase;
   font-weight: 500;
+  font-family: inherit;
   @include d-flex-row;
+
+  // Button groups
+  &-list {
+    @include d-flex-row;
+  }
 
   // HOVERED BUTTON
   &:hover {
@@ -53,5 +59,28 @@
       $color-primary 50%,
       transparent 50%
     );
+  }
+
+  &__menu {
+    background-color: transparent;
+    font-weight: 700;
+    padding: 1rem 2.6rem;
+    border: 1px solid rgba($color-black, 0.2);
+
+    &:hover,
+    &active {
+      box-shadow: none;
+    }
+
+    // Active State
+    &--active {
+      background-color: $color-primary;
+      color: $color-white;
+      border: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+      &:hover {
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+      }
+    }
   }
 }

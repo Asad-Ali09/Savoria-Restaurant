@@ -6,6 +6,21 @@
   font-size: 7rem;
 }
 
+// Secondary Heading
+.heading__secondary {
+  &--main {
+    color: $color-secondary;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+  }
+
+  &--sub {
+    font-size: 4rem;
+    text-transform: capitalize;
+  }
+}
+
 // Tertiary heading
 .heading__tertiary {
   text-transform: capitalize;

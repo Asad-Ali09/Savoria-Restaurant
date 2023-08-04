@@ -1,0 +1,94 @@
+.menu-card {
+  max-width: calc(25% - 1.5rem);
+  @include d-flex-column;
+  gap: 1.5rem;
+  border: 1px solid rgba($color-black, 0.4);
+  border: 1px solid rgb(226, 226, 226);
+  align-items: stretch;
+  text-align: left;
+  padding: 3.5rem 3rem;
+  border-radius: 1rem;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #fffbf1;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  }
+
+  &__img {
+    align-self: center;
+    width: 18rem;
+    height: 18rem;
+  }
+
+  // Card Title
+  &__title {
+    font-size: 2.4rem;
+    text-transform: capitalize;
+    transition: color 0.3s;
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
+  // Card ingredients list
+  &__ingredients {
+    font-size: 1.6rem;
+    color: rgb(100, 100, 100);
+    line-height: 150%;
+  }
+
+  // Price
+  &__price-box {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__price {
+    color: $color-secondary;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &__food-item {
+    width: 70%;
+    border-radius: 100rem;
+    padding: 0.5rem 4.5rem 0.5rem 1.5rem;
+    font: inherit;
+    font-weight: 500;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    border: 1px solid rgb(226, 226, 226);
+
+    // Arrow Styles
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, $color-white 50%),
+      linear-gradient(135deg, $color-white 50%, transparent 50%),
+      linear-gradient(to right, $color-primary, $color-primary);
+    background-size: 0.5rem 0.5rem, 0.5rem 0.5rem, 3.5rem 100%;
+    background-position: calc(100% - 2rem) calc(50% + 0.25rem),
+      calc(100% - 1.5rem) calc(50% + 0.25rem), 100% 0;
+    background-repeat: no-repeat;
+
+    // Hover Effect
+    &:hover {
+      cursor: pointer;
+    }
+
+    // While the menu is open
+    &:focus {
+      background-image: linear-gradient(
+          45deg,
+          $color-white 50%,
+          transparent 50%
+        ),
+        linear-gradient(135deg, transparent 50%, $color-white 50%),
+        linear-gradient(to right, $color-primary, $color-primary);
+      background-position: calc(100% - 1.5rem) calc(50% + 0.25rem),
+        calc(100% - 2rem) calc(50% + 0.25rem), 100% 0;
+      outline: 0;
+    }
+  }
+}

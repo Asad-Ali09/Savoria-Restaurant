@@ -10,6 +10,8 @@ import FoodCard from "../components/FoodCard";
 import foodCardImg01 from "../assets/food-card-01.png";
 import foodCardImg02 from "../assets/food-card-02.png";
 import foodCardImg03 from "../assets/food-card-03.png";
+import MenuCard from "../components/MenuCard";
+import menu from "../menu";
 
 const foodCards = [
   {
@@ -103,6 +105,40 @@ const Home = () => {
           <FoodCard title={el.title} image={el.image} />
         ))}
       </section>
+
+      {/* FOOD MENU */}
+      <div className="section-menu">
+        {/* Headings */}
+        <div className="heading__secondary">
+          <h2 className="heading__secondary--main">Fresh from panpie</h2>
+          <h2 className="heading__secondary--sub">
+            We Offer People Best Way <br /> To Eat Best Food
+          </h2>
+        </div>
+
+        {/* Menu Buttons */}
+        <div className="btn-list">
+          <button className="btn btn__menu btn__menu--active">All</button>
+          <button className="btn btn__menu">Donuts</button>
+          <button className="btn btn__menu">Pizza</button>
+          <button className="btn btn__menu">Drink</button>
+          <button className="btn btn__menu">Sandwhich</button>
+        </div>
+
+        <div className="section-menu__list">
+          {menu.map((el) => (
+            <MenuCard
+              image={el.image}
+              ingredients={el.ingredients}
+              name={el.name}
+              price={el.price}
+              options={el.options}
+              sku={el.sku}
+              key={el.sku}
+            />
+          ))}
+        </div>
+      </div>
     </>
   );
 };
