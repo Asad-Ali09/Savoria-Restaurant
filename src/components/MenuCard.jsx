@@ -1,6 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
 
 const MenuCard = ({ image, name, ingredients, sku, options, price }) => {
+  const selectionRef = useRef();
+  const [_price, setPrice] = useState(price[0]);
+
   return (
     <AnimatePresence>
       <motion.div
@@ -15,12 +19,17 @@ const MenuCard = ({ image, name, ingredients, sku, options, price }) => {
         <h3 className="menu-card__title">{name}</h3>
         <p className="menu-card__ingredients">{ingredients}</p>
         <div className="menu-card__price-box">
-          <select name={`food-item-${sku}`} className="menu-card__food-item">
+          <select
+            ref={selectionRef}
+            onChange={(e) => setPrice(price[e.target.selectedIndex])}
+            name={`food-item-${sku}`}
+            className="menu-card__food-item"
+          >
             {options.map((el) => (
               <option value={el}>{el}</option>
             ))}
           </select>
-          <p className="menu-card__price">${price[0].toFixed(2)}</p>
+          <p className="menu-card__price">${_price.toFixed(2)}</p>
         </div>
       </motion.div>
     </AnimatePresence>

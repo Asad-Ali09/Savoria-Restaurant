@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import menu from "../menu";
 import MenuCard from "./MenuCard";
-import { motion, AnimatePresence } from "framer-motion";
 
 const Menu = () => {
   const [filteredMenu, setFilteredMenu] = useState(menu);
