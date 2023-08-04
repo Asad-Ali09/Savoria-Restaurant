@@ -1,16 +1,20 @@
+import Menu from "../components/Menu";
 import { BsFillCartFill } from "react-icons/bs";
+import { useRef } from "react";
+import { AiOutlineCheck } from "react-icons/ai";
+import { ImArrowRight2 } from "react-icons/im";
+
 import heroImg from "../assets/hero-img.png";
 import heroShape01 from "../assets/hero_shape_01.png";
 import heroShape02 from "../assets/hero_shape_02.png";
 import heroShape03 from "../assets/hero_shape_03.png";
-import { AiOutlineCheck } from "react-icons/ai";
-import { useRef } from "react";
 import FoodCard from "../components/FoodCard";
 // Food Card Images
 import foodCardImg01 from "../assets/food-card-01.png";
 import foodCardImg02 from "../assets/food-card-02.png";
 import foodCardImg03 from "../assets/food-card-03.png";
-import Menu from "../components/Menu";
+// Section CTA Images
+import pizza40Off from "../assets/40off.png";
 
 const foodCards = [
   {
@@ -105,8 +109,34 @@ const Home = () => {
         ))}
       </section>
 
-      {/* Food Menu */}
+      {/* Food Menu Section */}
       <Menu />
+
+      {/* Section CTA*/}
+      <section className="section-cta">
+        <div className="section-cta__content">
+          <h1 className="heading__primary heading__primary--sub">
+            we have <span className="text-primary">excellent</span> <br />
+            of <span className="text-primary">quality</span> pizza
+          </h1>
+          <button className="btn btn__primary btn__primary--red">
+            <span>See all menu</span>
+            <span className="btn--arrow">
+              <ImArrowRight2 />
+            </span>
+          </button>
+        </div>
+
+        <div className="section-cta--img">
+          <img src={pizza40Off} alt="pizza" />
+          <div className="section-cta__shape">
+            <span className="section-cta__shape--text">
+              <span className="text-secondary"> 40%</span>
+              off
+            </span>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

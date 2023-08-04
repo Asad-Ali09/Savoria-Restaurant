@@ -4,6 +4,20 @@
   font-family: inherit;
   font-weight: 800;
   font-size: 7rem;
+
+  &--sub {
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 6rem;
+  }
+}
+
+// Primary Text
+.text-primary {
+  color: $color-primary;
+}
+.text-secondary {
+  color: $color-secondary;
 }
 
 // Secondary Heading

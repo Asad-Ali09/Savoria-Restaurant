@@ -101,3 +101,58 @@
   margin-block: 10rem;
   margin-top: -5rem;
 }
+
+// CTA Section
+.section-cta {
+  margin-block: 10rem;
+  padding-inline: $body-padding;
+  display: flex;
+  align-items: center;
+  background-color: $color-black--light;
+  background-image: url("../../assets/section_cta.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+  color: $color-white;
+
+  &__content {
+    flex: 1 1 0;
+    > h1 {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &--img {
+    position: relative;
+    > img {
+      transform: translateY(10rem);
+      // margin-bottom: -5rem;
+    }
+  }
+
+  &__shape {
+    position: absolute;
+    z-index: 1;
+    top: 0%;
+    left: -25%;
+    color: $color-black;
+    background-image: url("../../assets/40off_shape.png");
+    background-position: center;
+    background-size: contain;
+    width: 20rem;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    // display: grid;
+    // place-content: center;
+
+    &--text {
+      top: 18%;
+      left: -5%;
+      @include d-flex-column;
+      gap: 0;
+      position: relative;
+      font-size: 4rem;
+      font-weight: 800;
+    }
+  }
+}
