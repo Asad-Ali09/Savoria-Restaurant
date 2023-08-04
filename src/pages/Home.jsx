@@ -105,6 +105,7 @@ const Home = () => {
         ))}
       </section>
 
+      {/* Food Menu */}
       <Menu />
     </>
   );
