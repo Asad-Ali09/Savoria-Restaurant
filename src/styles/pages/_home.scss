@@ -156,3 +156,80 @@
     }
   }
 }
+
+// About Section
+
+.section-about {
+  @include d-flex-row;
+  gap: 2rem;
+  padding-block: 10rem;
+  padding-inline: $body-padding;
+  position: relative;
+  justify-content: center;
+  overflow: hidden;
+
+  &--2 {
+    flex-direction: row-reverse;
+    background-image: url(../../assets/about-burger-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__image {
+    flex: 1 1 0;
+    position: relative;
+    margin-left: 5rem;
+  }
+
+  // Floating shapes
+  &__shape {
+    position: absolute;
+  }
+  &__shape-1 {
+    z-index: -1;
+    top: -3rem;
+    left: -7rem;
+  }
+
+  &__shape-2 {
+    bottom: 5%;
+    right: -10rem;
+  }
+  &__shape-3 {
+    bottom: 5%;
+    right: -5rem;
+  }
+  &__shape-4 {
+    left: -5rem;
+    top: 30%;
+  }
+
+  &__content {
+    flex: 1 1 0;
+    @include d-flex-column;
+    gap: 2rem;
+    align-items: flex-start;
+    // margin-left: -5rem;
+  }
+
+  &__heading--primary {
+    font-size: 4rem;
+  }
+  &--2 &__heading--primary {
+    font-size: 5rem;
+  }
+
+  &__heading--sub {
+    font-size: 2rem;
+    color: $color-primary;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    line-height: 150%;
+  }
+
+  &--1 &__text {
+    margin-right: 10rem;
+  }
+}

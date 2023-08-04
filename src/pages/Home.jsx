@@ -15,6 +15,13 @@ import foodCardImg02 from "../assets/food-card-02.png";
 import foodCardImg03 from "../assets/food-card-03.png";
 // Section CTA Images
 import pizza40Off from "../assets/40off.png";
+//About Section Images
+import aboutImg01 from "../assets/about-pizzaw.png";
+import aboutShape01 from "../assets/about-pizzaw-shape-01.png";
+import aboutShape02 from "../assets/about-pizzaw-shape-02.png";
+import aboutImg02 from "../assets/about-burger.png";
+import aboutShape03 from "../assets/about-burger-shape.png";
+import aboutShape04 from "../assets/about-burger-shape-02.png";
 
 const foodCards = [
   {
@@ -136,6 +143,77 @@ const Home = () => {
             </span>
           </div>
         </div>
+      </section>
+
+      {/* Section About 1 */}
+      <section className="section-about section-about--1">
+        <div className="section-about__image">
+          <img src={aboutImg01} alt="burger" />
+          <img
+            src={aboutShape01}
+            alt="shape"
+            className="section-about__shape section-about__shape-1"
+          />
+        </div>
+        <div className="section-about__content">
+          <h2 className="section-about__heading--primary">
+            Panpie, Burgers, And <br /> Best Pizzas in Town
+          </h2>
+          <h3 className="section-about__heading--sub">
+            We put 100% of love and dedication into our dishes
+          </h3>
+          <p className="section-about__text">
+            Piorem ipsum dolor sit amet consectetur adipiscing eliturabitur
+            venenatis, nisl in bib endum commodo, sapien justo cursus are urna,
+            quis porta mauris elit finibus nulla.
+          </p>
+          <button className="btn btn__primary btn__primary--red">
+            <span>Know more</span>
+            <span>
+              <ImArrowRight2 />
+            </span>
+          </button>
+        </div>
+
+        <img
+          src={aboutShape02}
+          alt="shape"
+          className="section-about__shape section-about__shape-2"
+        />
+      </section>
+
+      {/* Section About 2 */}
+      <section className="section-about section-about--2">
+        <div className="section-about__image">
+          <img src={aboutImg02} alt="burger" />
+        </div>
+        <div className="section-about__content">
+          <h2 className="section-about__heading--primary">
+            Chicken <br /> King Burger
+          </h2>
+
+          <p className="section-about__text">
+            Piorem ipsum dolor sit amet consecte eliturabitur venenatis, nisl in
+            bib endum commodo, sapien eusto cursus are urnainibus.
+          </p>
+          <button className="btn btn__primary ">
+            <span>Order Now</span>
+            <span>
+              <ImArrowRight2 />
+            </span>
+          </button>
+        </div>
+
+        <img
+          src={aboutShape03}
+          alt="shape"
+          className="section-about__shape section-about__shape-3"
+        />
+        <img
+          src={aboutShape04}
+          alt="shape"
+          className="section-about__shape section-about__shape-4"
+        />
       </section>
     </>
   );
