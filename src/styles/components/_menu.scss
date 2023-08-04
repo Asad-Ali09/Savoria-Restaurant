@@ -1,0 +1,17 @@
+.section-menu {
+  @include d-flex-column;
+  text-align: center;
+  gap: 4rem;
+  margin-bottom: 20rem;
+  padding-inline: $body-padding;
+
+  &__list {
+    width: 100%;
+    @include d-flex-row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: stretch;
+    justify-content: space-evenly;
+    justify-content: flex-start;
+  }
+}

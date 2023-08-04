@@ -101,19 +101,3 @@
   margin-block: 10rem;
   margin-top: -5rem;
 }
-
-.section-menu {
-  @include d-flex-column;
-  text-align: center;
-  gap: 4rem;
-  margin-bottom: 20rem;
-  padding-inline: $body-padding;
-
-  &__list {
-    @include d-flex-row;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: stretch;
-    justify-content: space-evenly;
-  }
-}

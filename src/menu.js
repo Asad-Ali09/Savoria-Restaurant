@@ -7,6 +7,13 @@ import product06Image from "./assets/pro_06.png";
 import product07Image from "./assets/pro_07.png";
 import product08Image from "./assets/pro_08.png";
 
+const [donut, pizza, drinks, sandwich] = [
+  "donut",
+  "pizza",
+  "drinks",
+  "sandwich",
+];
+
 const menu = [
   {
     sku: "101",
@@ -17,16 +24,18 @@ const menu = [
     ingredients: "Gorgonzola, mozzarella, taleggio Red onions, capers, olives",
     options: ["large", "medium", "small"],
     price: [25, 18, 14],
+    categories: [donut, pizza],
   },
   {
     sku: "102",
-    name: "Burger Kingo",
+    name: "Pizza Max",
     image: product02Image,
     description:
       "Gorgonzola, mozzarella, taleggio Red onions, capers, olives Porem ipsum dolor sit amet, consectetur adipiscing elit. Duis arcu purus rhoncus fringilla vestibulum vel, dignissim vel ante. Nulla faciNullama urna sit amet tellus pellentesque egestas in in ante.",
     ingredients: "Gorgonzola, mozzarella, taleggio Red onions, capers, olives",
     options: ["Double Crust", "Original Crust", "Thick Crust", "Thick Crust"],
     price: [25, 24, 18, 14],
+    categories: [pizza],
   },
   {
     sku: "103",
@@ -37,6 +46,7 @@ const menu = [
     ingredients: "Gorgonzola, mozzarella, taleggio Red onions, capers, olives",
     options: ["large", "medium", "small"],
     price: [27, 24, 19],
+    categories: [sandwich],
   },
   {
     sku: "104",
@@ -47,6 +57,7 @@ const menu = [
     ingredients: "Gorgonzola, mozzarella, taleggio Red onions, capers, olives",
     options: ["large", "medium", "small"],
     price: [20, 15, 14],
+    categories: [donut, pizza],
   },
   {
     sku: "105",
@@ -57,6 +68,7 @@ const menu = [
     ingredients: "Gorgonzola, mozzarella, taleggio Red onions, capers, olives",
     options: ["large", "medium", "small"],
     price: [24, 13, 7],
+    categories: [sandwich],
   },
   {
     sku: "106",
@@ -67,6 +79,7 @@ const menu = [
     ingredients: "Gorgonzola, mozzarella, taleggio Red onions, capers, olives",
     options: ["large", "medium", "small"],
     price: [5, 3, 2],
+    categories: [drinks],
   },
   {
     sku: "107",
@@ -77,6 +90,7 @@ const menu = [
     ingredients: "Gorgonzola, mozzarella, taleggio Red onions, capers, olives",
     options: ["large", "medium", "small"],
     price: [10, 9, 7],
+    categories: [sandwich],
   },
   {
     sku: "108",
@@ -87,6 +101,7 @@ const menu = [
     ingredients: "Gorgonzola, mozzarella, taleggio Red onions, capers, olives",
     options: ["large", "medium", "small"],
     price: [15, 10, 5],
+    categories: [donut],
   },
 ];
 
