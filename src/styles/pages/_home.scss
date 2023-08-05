@@ -237,3 +237,9 @@
     margin-right: 10rem;
   }
 }
+
+.section-brands {
+  padding: 10rem $body-padding;
+  @include d-flex-row;
+  justify-content: space-evenly;
+}

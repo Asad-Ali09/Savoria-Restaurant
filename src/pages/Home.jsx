@@ -23,6 +23,13 @@ import aboutImg02 from "../assets/about-burger.png";
 import aboutShape03 from "../assets/about-burger-shape.png";
 import aboutShape04 from "../assets/about-burger-shape-02.png";
 import Counter from "../components/Counter";
+// Restaurent Images
+import brand01 from "../assets/brand1.png";
+import brand02 from "../assets/brand2.png";
+import brand03 from "../assets/brand3.png";
+import brand04 from "../assets/brand4.png";
+import brand05 from "../assets/brand5.png";
+import brand06 from "../assets/brand6.png";
 
 const foodCards = [
   {
@@ -219,6 +226,28 @@ const Home = () => {
 
       {/* Section Counter */}
       <Counter />
+
+      {/* brands Section */}
+      <section className="section-brands">
+        <div className="section-brands__image-box">
+          <img src={brand01} alt="brand" className="section-brands__image" />
+        </div>
+        <div className="section-brands__image-box">
+          <img src={brand02} alt="brand" className="section-brands__image" />
+        </div>
+        <div className="section-brands__image-box">
+          <img src={brand03} alt="brand" className="section-brands__image" />
+        </div>
+        <div className="section-brands__image-box">
+          <img src={brand04} alt="brand" className="section-brands__image" />
+        </div>
+        <div className="section-brands__image-box">
+          <img src={brand05} alt="brand" className="section-brands__image" />
+        </div>
+        <div className="section-brands__image-box">
+          <img src={brand06} alt="brand" className="section-brands__image" />
+        </div>
+      </section>
     </>
   );
 };
