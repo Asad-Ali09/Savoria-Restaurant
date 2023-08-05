@@ -22,6 +22,7 @@ import aboutShape02 from "../assets/about-pizzaw-shape-02.png";
 import aboutImg02 from "../assets/about-burger.png";
 import aboutShape03 from "../assets/about-burger-shape.png";
 import aboutShape04 from "../assets/about-burger-shape-02.png";
+import Counter from "../components/Counter";
 
 const foodCards = [
   {
@@ -215,6 +216,9 @@ const Home = () => {
           className="section-about__shape section-about__shape-4"
         />
       </section>
+
+      {/* Section Counter */}
+      <Counter />
     </>
   );
 };

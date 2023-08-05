@@ -179,6 +179,10 @@
     flex: 1 1 0;
     position: relative;
     margin-left: 5rem;
+
+    > img {
+      max-width: 100%;
+    }
   }
 
   // Floating shapes
