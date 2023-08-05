@@ -7,11 +7,27 @@
   padding-bottom: 20rem;
   overflow: hidden;
 
+  @include respond(md) {
+    padding-inline: $body-padding-md;
+  }
+  @include respond(phone-lg) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  @include respond(phone) {
+    padding-inline: $body-padding-sm;
+  }
+
   // HERO CONTENT BOX
   &__content-box {
     @include d-flex-column;
-    align-items: start;
+    align-items: flex-start;
     gap: 3rem;
+
+    @include respond(phone-lg) {
+      text-align: center;
+      align-items: center;
+    }
   }
 
   // HERO TAG
@@ -24,8 +40,14 @@
     font-size: 1.8rem;
     padding-inline: 2rem;
     padding-right: 4rem;
-    //   letter-spacing: 0.1rem;
     font-weight: 500;
+
+    @include respond(phone) {
+      font-size: 1.6rem;
+    }
+    @include respond(phone-sm) {
+      font-size: 1.2rem;
+    }
   }
 
   // Main ul List
@@ -59,6 +81,7 @@
   // HERO IMAGE SECTION
   &__img {
     // MAIN IMAGE BOX
+
     &-box {
       // MAIN HERO IMAGE
       position: relative;
@@ -68,45 +91,91 @@
     &--main {
       position: relative;
       z-index: 1;
+
+      @media screen and (max-width: 1460px) {
+        width: 100%;
+      }
     }
 
     // Floating Shape
     &__shape {
       position: absolute;
 
+      @include respond(md) {
+        width: 20rem;
+      }
+
       // Tomato
       &--02 {
         top: 5%;
         right: -20%;
         transition: transform 1s ease-out;
+
+        @include respond(tab) {
+          right: -25%;
+        }
+        @include respond(phone-lg) {
+          right: -10%;
+        }
+        @include respond(phone) {
+          right: -25%;
+        }
       }
 
       // Lattice
       &--03 {
         bottom: 2%;
-        left: 7%;
+        left: 0%;
         transition: transform 1s ease-out;
+
+        @include respond(tab-md) {
+          left: -2rem;
+        }
+        @include respond(tab) {
+          left: -5rem;
+        }
+        @include respond(phone-lg) {
+          left: -2rem;
+        }
+        @include respond(phone) {
+          left: -5rem;
+        }
       }
     }
   }
 }
 
+// ----------------------------------------------------------------
 // Food Cards Section
+// ----------------------------------------------------------------
 
 .section-food-cards {
   padding-inline: $body-padding;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
+  justify-content: center;
   margin-block: 10rem;
   margin-top: -5rem;
+
+  @include respond(md) {
+    padding-inline: $body-padding-md;
+  }
+  @include respond(phone) {
+    padding-inline: $body-padding-sm;
+  }
 }
 
+// ----------------------------------------------------------------
 // CTA Section
+// ----------------------------------------------------------------
+
 .section-cta {
   margin-block: 10rem;
   padding-inline: $body-padding;
   display: flex;
+  gap: 1rem;
   align-items: center;
   background-color: $color-black--light;
   background-image: url("../../assets/section_cta.jpg");
@@ -114,19 +183,48 @@
   background-attachment: fixed;
   overflow: hidden;
   color: $color-white;
+  padding-top: 1rem;
+
+  @include respond(md) {
+    padding-inline: $body-padding-md;
+  }
+  @include respond(tab) {
+    flex-direction: column;
+    padding-top: 4rem;
+  }
 
   &__content {
     flex: 1 1 0;
     > h1 {
       margin-bottom: 3rem;
     }
+    // Tab responsive
+    @include respond(tab) {
+      @include d-flex-column;
+      text-align: center;
+    }
   }
 
   &--img {
     position: relative;
+    flex: 1 1 0;
+    text-align: center;
     > img {
       transform: translateY(10rem);
-      // margin-bottom: -5rem;
+      @include respond(md) {
+        max-width: 100%;
+      }
+
+      @include respond(tab) {
+        width: 70%;
+      }
+
+      @include respond(phone-lg) {
+        width: 100%;
+      }
+      @include respond(phone-sm) {
+        transform: translateY(5rem);
+      }
     }
   }
 
@@ -142,8 +240,22 @@
     width: 20rem;
     aspect-ratio: 1;
     background-repeat: no-repeat;
-    // display: grid;
-    // place-content: center;
+
+    @include respond(tab-md) {
+      left: -15%;
+    }
+    @include respond(tab) {
+      left: 0%;
+    }
+    @include respond(phone-lg) {
+      width: 15rem;
+      top: 5rem;
+      left: -5rem;
+    }
+    @include respond(phone-sm) {
+      width: 10rem;
+      top: 0;
+    }
 
     &--text {
       top: 18%;
@@ -153,11 +265,20 @@
       position: relative;
       font-size: 4rem;
       font-weight: 800;
+
+      @include respond(phone-lg) {
+        font-size: 3rem;
+      }
+      @include respond(phone-sm) {
+        font-size: 2rem;
+      }
     }
   }
 }
 
+//----------------------------------------------------------------
 // About Section
+//----------------------------------------------------------------
 
 .section-about {
   @include d-flex-row;
@@ -168,17 +289,44 @@
   justify-content: center;
   overflow: hidden;
 
+  // 1024px media query
+  @include respond(md) {
+    padding-inline: $body-padding-md;
+  }
+  @include respond(tab) {
+    text-align: center;
+  }
+  @include respond(phone) {
+    padding-inline: $body-padding-sm;
+  }
+
+  // Section 1
+  &--1 {
+    @include respond(tab) {
+      flex-direction: column;
+    }
+  }
+
+  // Section 2
   &--2 {
     flex-direction: row-reverse;
     background-image: url(../../assets/about-burger-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include respond(tab) {
+      flex-direction: column-reverse;
+    }
   }
 
   &__image {
     flex: 1 1 0;
     position: relative;
     margin-left: 5rem;
+
+    @include respond(tab) {
+      margin-left: 0;
+    }
 
     > img {
       max-width: 100%;
@@ -188,6 +336,13 @@
   // Floating shapes
   &__shape {
     position: absolute;
+
+    @include respond(landscape) {
+      width: 15rem;
+    }
+    @include respond(phone) {
+      width: 12rem;
+    }
   }
   &__shape-1 {
     z-index: -1;
@@ -198,6 +353,9 @@
   &__shape-2 {
     bottom: 5%;
     right: -10rem;
+    @include respond(landscape) {
+      right: -5rem;
+    }
   }
   &__shape-3 {
     bottom: 5%;
@@ -213,7 +371,10 @@
     @include d-flex-column;
     gap: 2rem;
     align-items: flex-start;
-    // margin-left: -5rem;
+
+    @include respond(tab) {
+      align-items: center;
+    }
   }
 
   &__heading--primary {
@@ -235,11 +396,33 @@
 
   &--1 &__text {
     margin-right: 10rem;
+
+    @include respond(tab) {
+      margin-right: 0;
+    }
   }
 }
 
+// ----------------------------------------------------------------
+// Section Brands
+// ----------------------------------------------------------------
+
 .section-brands {
   padding: 10rem $body-padding;
-  @include d-flex-row;
-  justify-content: space-evenly;
+  overflow-x: scroll;
+  @include respond(md) {
+    padding-inline: $body-padding-md;
+  }
+  > div {
+    @include d-flex-row;
+    justify-content: space-evenly;
+    gap: 3rem;
+  }
+
+  &__image-box {
+  }
+
+  &__image {
+    width: 10rem;
+  }
 }

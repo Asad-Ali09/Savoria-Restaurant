@@ -1,6 +1,8 @@
 .section-counter {
   padding: $body-padding;
-  @include d-flex-row;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
   justify-content: space-evenly;
   background-image: linear-gradient(
       to right,
@@ -10,11 +12,23 @@
     url(../../assets/counter_bg.jpg);
   background-attachment: fixed;
   color: $color-white;
+
+  @include respond(md) {
+    padding-inline: $body-padding-md;
+  }
+  @include respond(tab) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 }
 
 .counter {
   @include d-flex-column;
   font-size: 1.6rem;
+  text-align: center;
 
   &__shape {
     > svg {

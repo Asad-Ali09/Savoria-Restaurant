@@ -16,6 +16,7 @@
   // Button groups
   &-list {
     @include d-flex-row;
+    flex-wrap: wrap;
   }
 
   // HOVERED BUTTON

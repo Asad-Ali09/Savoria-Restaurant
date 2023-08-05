@@ -8,6 +8,16 @@
 
 html {
   font-size: 62.5%;
+
+  @include respond(landscape) {
+    font-size: 52%;
+  }
+  @include respond(tab-land) {
+    font-size: 46%;
+  }
+  @include respond(phone) {
+    font-size: 62.5%;
+  }
 }
 
 body {

@@ -9,6 +9,13 @@
   font-size: 1.6rem;
   font-family: $font-secondary;
 
+  @include respond(md) {
+    padding: $body-padding-md;
+  }
+  @include respond(phone) {
+    padding-inline: $body-padding-sm;
+  }
+
   // Div containing all content elements
   &__content {
     width: 100%;
@@ -19,6 +26,13 @@
     align-items: flex-start;
     line-height: 170%;
 
+    @include respond(phone-lg) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 3rem;
+    }
+
     // Giving Equal Width to all children
     > * {
       flex: 1 1 0;
@@ -28,6 +42,10 @@
       @include d-flex-column;
       align-items: flex-start;
       gap: 2rem;
+
+      @include respond(phone-lg) {
+        align-items: center;
+      }
     }
   }
 
@@ -41,12 +59,20 @@
   // Shop Address
   &__address {
     margin-right: 10rem;
+    @include respond(phone-lg) {
+      margin-right: 0;
+    }
   }
 
   // Social Media Icons
   &__links {
     @include d-flex-row;
     justify-content: flex-start;
+
+    @include respond(phone-lg) {
+      justify-content: center;
+    }
+
     &--item {
       border-radius: 50%;
       border: 1px solid $color-border-2;
@@ -77,6 +103,10 @@
     list-style: none;
     display: flex;
     flex-direction: column;
+
+    @include respond(phone-lg) {
+      align-items: center;
+    }
 
     &--active {
       color: $color-white;
@@ -132,13 +162,20 @@
   &__shape {
     position: absolute;
 
+    @include respond(landscape) {
+      width: 15rem;
+    }
+    @include respond(phone) {
+      width: 12rem;
+    }
+
     &--1 {
       bottom: 15%;
       left: 0%;
     }
     &--2 {
       top: 10%;
-      left: 50%;
+      right: 0;
     }
     &--3 {
       right: 5%;

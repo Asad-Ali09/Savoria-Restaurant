@@ -25,3 +25,16 @@ $font-primary: "Barlow", sans-serif;
 $font-secondary: "Roboto", sans-serif;
 // WHITE SPACES
 $body-padding: 15rem;
+$body-padding-md: 5rem;
+$body-padding-sm: 1rem;
+
+// MEDIA Queries
+$m-md: 1065px;
+$m-landscape: 987px;
+$m-lcd-mini: 900px;
+$m-tab-lg: 850px; // tab-land
+$m-tab-md: 770px;
+$m-tab: 630px;
+$m-phone-lg: 520px;
+$m-phone: 450px;
+$m-phone-sm: 320px;

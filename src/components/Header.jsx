@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { FaPhoneVolume } from "react-icons/fa";
 import { BsFillCartFill } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineClose } from "react-icons/ai";
 import logo from "../assets/logo-dark.png";
 import { useRef } from "react";
 

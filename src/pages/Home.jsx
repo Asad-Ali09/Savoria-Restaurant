@@ -69,7 +69,9 @@ const Home = () => {
         {/* Hero Section Content */}
         <div className="hero__content-box">
           <div className="hero__tag">free home delivery 24 hours</div>
-          <h1 className="heading__primary">Enjoy your pizza in town!</h1>
+          <h1 className="heading__primary">
+            Enjoy your <br /> pizza in town!
+          </h1>
           <ul className="hero__list">
             <li className="hero__list__item">
               <span>
@@ -229,23 +231,25 @@ const Home = () => {
 
       {/* brands Section */}
       <section className="section-brands">
-        <div className="section-brands__image-box">
-          <img src={brand01} alt="brand" className="section-brands__image" />
-        </div>
-        <div className="section-brands__image-box">
-          <img src={brand02} alt="brand" className="section-brands__image" />
-        </div>
-        <div className="section-brands__image-box">
-          <img src={brand03} alt="brand" className="section-brands__image" />
-        </div>
-        <div className="section-brands__image-box">
-          <img src={brand04} alt="brand" className="section-brands__image" />
-        </div>
-        <div className="section-brands__image-box">
-          <img src={brand05} alt="brand" className="section-brands__image" />
-        </div>
-        <div className="section-brands__image-box">
-          <img src={brand06} alt="brand" className="section-brands__image" />
+        <div>
+          <div className="section-brands__image-box">
+            <img src={brand01} alt="brand" className="section-brands__image" />
+          </div>
+          <div className="section-brands__image-box">
+            <img src={brand02} alt="brand" className="section-brands__image" />
+          </div>
+          <div className="section-brands__image-box">
+            <img src={brand03} alt="brand" className="section-brands__image" />
+          </div>
+          <div className="section-brands__image-box">
+            <img src={brand04} alt="brand" className="section-brands__image" />
+          </div>
+          <div className="section-brands__image-box">
+            <img src={brand05} alt="brand" className="section-brands__image" />
+          </div>
+          <div className="section-brands__image-box">
+            <img src={brand06} alt="brand" className="section-brands__image" />
+          </div>
         </div>
       </section>
     </>
