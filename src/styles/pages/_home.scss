@@ -353,6 +353,9 @@
   &__shape-2 {
     bottom: 5%;
     right: -10rem;
+
+    animation: toUpLeft 3s ease-in-out 0s infinite alternate;
+
     @include respond(landscape) {
       right: -5rem;
     }
@@ -417,9 +420,6 @@
     @include d-flex-row;
     justify-content: space-evenly;
     gap: 3rem;
-  }
-
-  &__image-box {
   }
 
   &__image {

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BiListPlus } from "react-icons/bi";
 import { GoPerson } from "react-icons/go";
 import { AiOutlineFileProtect, AiOutlineHeart } from "react-icons/ai";
@@ -23,13 +23,36 @@ const Counter = () => {
 };
 
 const CountItem = ({ logo, number, name }) => {
-  const numRef = useRef();
+  const numRef = useRef(null);
+  const [isVisible, setIsVisibile] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsVisibile(entry.isIntersecting);
+        console.log(entry.isIntersecting);
+      },
+      {
+        threshold: 1,
+      }
+    );
+
+    const elementToObserve = numRef.current;
+    observer.observe(elementToObserve);
+
+    return () => {
+      if (elementToObserve) {
+        observer.unobserve(elementToObserve);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     let start = 0;
     let end = parseFloat(number);
-    let increment = Math.floor(end / 10);
-    const interval = 50;
+    let increment = Math.floor(end / 15);
+    const interval = 60;
 
     const updateCounter = () => {
       if (start < end) {
@@ -41,7 +64,7 @@ const CountItem = ({ logo, number, name }) => {
       }
     };
     updateCounter();
-  }, [number]);
+  }, [number, isVisible]);
 
   return (
     <div className="counter">

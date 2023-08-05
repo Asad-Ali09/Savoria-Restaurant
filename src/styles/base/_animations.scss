@@ -1,0 +1,8 @@
+@keyframes toUpLeft {
+  50% {
+    transform: translate(0, -2rem);
+  }
+  100% {
+    transform: translate(-2rem, -2rem);
+  }
+}
