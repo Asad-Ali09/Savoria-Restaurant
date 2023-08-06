@@ -5,10 +5,10 @@ const FoodCard = ({ title, image }) => {
     <div className="food-card">
       <div className="food-card__curve">
         <h3 className="heading__tertiary">{title}</h3>
-        <buttun className="btn btn__ghost">
+        <button className="btn btn__ghost">
           <AiOutlineArrowRight />
           See menu
-        </buttun>
+        </button>
       </div>
 
       <div className="food-card__image--container">
