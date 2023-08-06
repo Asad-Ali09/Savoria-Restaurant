@@ -163,8 +163,8 @@ const Home = () => {
 
       {/* Food Cards Section */}
       <section className="section-food-cards">
-        {foodCards.map((el) => (
-          <FoodCard title={el.title} image={el.image} />
+        {foodCards.map((el, idx) => (
+          <FoodCard title={el.title} image={el.image} key={idx} />
         ))}
       </section>
 
