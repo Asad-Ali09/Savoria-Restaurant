@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 
 const MenuCard = ({ image, name, ingredients, sku, options, price }) => {
@@ -9,10 +9,15 @@ const MenuCard = ({ image, name, ingredients, sku, options, price }) => {
     <motion.div
       className="menu-card"
       layout
-      initial={{ opacity: 0.4, scale: 0.4 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0.4, scale: 0.4 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      initial={{ opacity: 0.4, scale: 0.4, y: 50 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{
+        opacity: 0.4,
+        scale: 0.4,
+        y: 50,
+        transition: { duration: 0.2, ease: "easeIn" },
+      }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <img src={image} alt="food item" className="menu-card__img" />
       <h3 className="menu-card__title">{name}</h3>

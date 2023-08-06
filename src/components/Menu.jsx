@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import menu from "../menu";
 import MenuCard from "./MenuCard";
+import { AnimatePresence } from "framer-motion";
 
 const Menu = () => {
   const [filteredMenu, setFilteredMenu] = useState(menu);
@@ -70,19 +71,19 @@ const Menu = () => {
       </div>
 
       <div className="section-menu__list">
-        {/* <AnimatePresence> */}
-        {filteredMenu.map((el) => (
-          <MenuCard
-            image={el.image}
-            ingredients={el.ingredients}
-            name={el.name}
-            price={el.price}
-            options={el.options}
-            sku={el.sku}
-            key={el.sku}
-          />
-        ))}
-        {/* </AnimatePresence> */}
+        <AnimatePresence>
+          {filteredMenu.map((el) => (
+            <MenuCard
+              image={el.image}
+              ingredients={el.ingredients}
+              name={el.name}
+              price={el.price}
+              options={el.options}
+              sku={el.sku}
+              key={el.sku}
+            />
+          ))}
+        </AnimatePresence>
       </div>
     </div>
   );
