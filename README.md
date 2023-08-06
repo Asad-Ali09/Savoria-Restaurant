@@ -2,7 +2,7 @@
 
 ### A Landing Page of restaurant web app that allows users to check different food items in menu
 
-### Live Demo : [Savoria]()
+### Live Demo : [Savoria](https://savoria-restaurant.vercel.app)
 
 ### Technologies Used
 
