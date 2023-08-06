@@ -7,7 +7,7 @@
   padding-inline: 1rem;
   gap: 2rem;
   background-color: $header-color;
-  border-bottom: 1px solid $header-border-color;
+  border-bottom: 2px solid $header-border-color;
 
   @media screen and (max-width: 710px) {
     justify-content: initial;
@@ -62,26 +62,26 @@
 // Main Navigation List
 .primary-nav {
   @media screen and (max-width: 710px) {
-    display: none;
     position: absolute;
-    top: 9rem;
+    top: 0rem;
     left: 0;
+    height: 100vh;
     width: 100%;
     text-align: left;
-  }
-
-  &[data-visible="true"] {
-    display: block;
+    z-index: 10;
+    position: fixed;
+    transform-origin: top;
   }
 
   // ul list of nav
   &__list {
+    height: 100%;
     @include d-flex-row;
     list-style: none;
     gap: 2.5rem;
     @media screen and (max-width: 710px) {
       flex-direction: column;
-      background-color: #efefef;
+      background-color: $header-color;
     }
   }
 
@@ -89,7 +89,6 @@
   &__item {
     font-size: 1.6rem;
     text-transform: uppercase;
-
     // link items
     > a {
       text-decoration: none;
@@ -100,6 +99,10 @@
       @media screen and (max-width: 710px) {
         padding: 1rem;
         display: block;
+        color: $color-primary;
+        font-size: 3rem;
+        letter-spacing: 0.1rem;
+        font-weight: 500;
       }
 
       &:hover {
@@ -135,6 +138,8 @@
   background-color: transparent;
   border: none;
   place-content: center;
+  z-index: 11;
+  position: relative;
 
   > svg {
     font-size: 3rem;
@@ -145,4 +150,8 @@
   @media screen and (max-width: 710px) {
     display: grid;
   }
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
