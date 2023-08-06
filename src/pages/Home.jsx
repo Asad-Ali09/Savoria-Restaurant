@@ -3,9 +3,11 @@ import { BsFillCartFill } from "react-icons/bs";
 import { useRef } from "react";
 import { AiOutlineCheck } from "react-icons/ai";
 import { ImArrowRight2 } from "react-icons/im";
+//Framer motion
+import { motion } from "framer-motion";
 
 import heroImg from "../assets/hero-img.png";
-import heroShape01 from "../assets/hero_shape_01.png";
+// import heroShape01 from "../assets/hero_shape_01.png";
 import heroShape02 from "../assets/hero_shape_02.png";
 import heroShape03 from "../assets/hero_shape_03.png";
 import FoodCard from "../components/FoodCard";
@@ -62,17 +64,45 @@ const Home = () => {
     shapeRefs.current[1].style.transform = `translateX(${-move}%)`;
   };
 
+  // Framer Motion Variants
+  const heroVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
+  const heroItem = {
+    hidden: { opacity: 0, x: -50 },
+    show: { opacity: 1, x: 0, transition: { duration: 1 } },
+  };
+
+  const CtaItem = {
+    hidden: { opacity: 0, y: 150 },
+    show: { opacity: 1, y: 0, transition: { duration: 1 } },
+  };
+
   return (
     <>
       {/* Hero Section */}
       <div className="hero" onMouseMove={handleMouseMove}>
         {/* Hero Section Content */}
-        <div className="hero__content-box">
-          <div className="hero__tag">free home delivery 24 hours</div>
-          <h1 className="heading__primary">
+        <motion.div
+          variants={heroVariants}
+          initial="hidden"
+          animate="show"
+          className="hero__content-box"
+        >
+          <motion.div variants={heroItem} className="hero__tag">
+            free home delivery 24 hours
+          </motion.div>
+          <motion.h1 variants={heroItem} className="heading__primary">
             Enjoy your <br /> pizza in town!
-          </h1>
-          <ul className="hero__list">
+          </motion.h1>
+          <motion.ul variants={heroItem} className="hero__list">
             <li className="hero__list__item">
               <span>
                 <AiOutlineCheck />
@@ -91,24 +121,36 @@ const Home = () => {
               </span>
               elit Expedita necessi
             </li>
-          </ul>
-          <button className="btn btn__primary">
+          </motion.ul>
+          <motion.button variants={heroItem} className="btn btn__primary">
             <BsFillCartFill />
             order now
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
 
         {/* Hero Section Images */}
-        <div className="hero__img-box">
-          <img src={heroImg} alt="pizza" className="hero__img--main" />
+        <div initial="hidden" animate="show" className="hero__img-box">
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            src={heroImg}
+            alt="pizza"
+            className="hero__img--main"
+          />
 
-          <img
+          <motion.img
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 2 }}
             src={heroShape02}
             alt="shape 2"
             className="hero__img__shape hero__img__shape--02"
             ref={(el) => (shapeRefs.current[0] = el)}
           />
-          <img
+          <motion.img
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 2 }}
             src={heroShape03}
             alt="shape 3"
             className="hero__img__shape hero__img__shape--03"
@@ -144,15 +186,21 @@ const Home = () => {
           </button>
         </div>
 
-        <div className="section-cta--img">
-          <img src={pizza40Off} alt="pizza" />
-          <div className="section-cta__shape">
+        <motion.div
+          variants={heroVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="section-cta--img"
+        >
+          <motion.img variants={CtaItem} src={pizza40Off} alt="pizza" />
+          <motion.div variants={CtaItem} className="section-cta__shape">
             <span className="section-cta__shape--text">
               <span className="text-secondary"> 40%</span>
               off
             </span>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Section About 1 */}

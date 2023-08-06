@@ -31,7 +31,6 @@ const CountItem = ({ logo, number, name }) => {
       (entries) => {
         const entry = entries[0];
         setIsVisibile(entry.isIntersecting);
-        console.log(entry.isIntersecting);
       },
       {
         threshold: 1,

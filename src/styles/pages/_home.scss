@@ -1,4 +1,7 @@
+// ----------------------------------------------------------------
 // HERO SECTION
+// ----------------------------------------------------------------
+
 .hero {
   padding-inline: $body-padding;
   @include grid-2-cols;
@@ -210,7 +213,8 @@
     flex: 1 1 0;
     text-align: center;
     > img {
-      transform: translateY(10rem);
+      bottom: -10rem;
+      position: relative;
       @include respond(md) {
         max-width: 100%;
       }
@@ -223,7 +227,7 @@
         width: 100%;
       }
       @include respond(phone-sm) {
-        transform: translateY(5rem);
+        bottom: -5rem;
       }
     }
   }
@@ -413,6 +417,11 @@
 .section-brands {
   padding: 10rem $body-padding;
   overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   @include respond(md) {
     padding-inline: $body-padding-md;
   }

@@ -8,6 +8,7 @@
   color: $text-light;
   font-size: 1.6rem;
   font-family: $font-secondary;
+  overflow: hidden;
 
   @include respond(md) {
     padding: $body-padding-md;
@@ -175,7 +176,7 @@
     }
     &--2 {
       top: 10%;
-      right: 0;
+      right: 45%;
     }
     &--3 {
       right: 5%;

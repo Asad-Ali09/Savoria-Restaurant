@@ -6,6 +6,7 @@ import {
   BiLogoLinkedin,
   BiLogoPinterestAlt,
 } from "react-icons/bi";
+import { motion } from "framer-motion";
 
 import footerShape01 from "../assets/footer_shape01.png";
 import footerShape02 from "../assets/footer_shape02.png";
@@ -15,17 +16,29 @@ const Footer = () => {
   return (
     <footer className="footer">
       {/* Footer Shapes */}
-      <img
+      <motion.img
+        initial={{ opacity: 0, y: 200 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.8 }}
+        viewport={{ once: true }}
         src={footerShape01}
         alt="footer shape"
         className="footer__shape footer__shape--1"
       />
-      <img
+      <motion.img
+        initial={{ opacity: 0, y: -100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
         src={footerShape02}
         alt="footer shape"
         className="footer__shape footer__shape--2"
       />
-      <img
+      <motion.img
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.5, duration: 0.8 }}
+        viewport={{ once: true }}
         src={footerShape03}
         alt="footer shape"
         className="footer__shape footer__shape--3"

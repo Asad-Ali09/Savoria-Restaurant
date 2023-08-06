@@ -70,6 +70,7 @@ const Menu = () => {
       </div>
 
       <div className="section-menu__list">
+        {/* <AnimatePresence> */}
         {filteredMenu.map((el) => (
           <MenuCard
             image={el.image}
@@ -81,6 +82,7 @@ const Menu = () => {
             key={el.sku}
           />
         ))}
+        {/* </AnimatePresence> */}
       </div>
     </div>
   );
