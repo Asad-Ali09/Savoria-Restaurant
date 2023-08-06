@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { FaPhoneVolume } from "react-icons/fa";
 import { BsFillCartFill } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
-import logo from "../assets/logo-dark.png";
+import logo from "../assets/savoria-dark.png";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 

@@ -1,4 +1,4 @@
-import footerLogo from "../assets/logo-light.png";
+import footerLogo from "../assets/savoria-light.png";
 import {
   BiLogoFacebook,
   BiLogoTwitter,
